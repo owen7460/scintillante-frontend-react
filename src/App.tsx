@@ -17,6 +17,10 @@ function App() {
     fetchComposers();
   }, []);
 
+  const handleComposerClick = (composerId: number) => {
+    console.log(composerId);
+  };
+
   return (
     <>
       <h1>Scintillante</h1>
@@ -29,7 +33,9 @@ function App() {
         {composers.map((composer) => {
           return (
             <div key={composer.id}>
-              <h3>{composer.name}</h3>
+              <h3 onClick={() => handleComposerClick(composer.id)}>
+                {composer.name}
+              </h3>
             </div>
           );
         })}

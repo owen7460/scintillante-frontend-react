@@ -8,10 +8,8 @@ function Composer() {
   const { id } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const page = searchParams.get("page") ? searchParams.get("page") : 1;
-  const pageSize = searchParams.get("pageSize")
-    ? searchParams.get("pageSize")
-    : "2";
+  const page = Number(searchParams.get("page") || 1);
+  const pageSize = Number(searchParams.get("pageSize") || 2);
 
   const [works, setWorks] = useState([]);
   const [total, setTotal] = useState(0);

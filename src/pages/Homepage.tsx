@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   const handleComposerClick = (composerId: number) => {
-    navigate(`/composer/${composerId}`);
+    navigate(`/composer/${composerId}?page=1&pageSize=2`);
   };
 
   return (

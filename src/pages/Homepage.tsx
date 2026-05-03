@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getComposers } from "./apis/getComposers";
+import { getComposers } from "../apis/getComposers";
 
 function App() {
   const [composers, setComposers] = useState([]);

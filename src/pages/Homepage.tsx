@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { getComposers } from "../apis/getComposers";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [composers, setComposers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchComposers = async () => {
@@ -18,7 +20,7 @@ function App() {
   }, []);
 
   const handleComposerClick = (composerId: number) => {
-    console.log(composerId);
+    navigate(`/composer/${composerId}`);
   };
 
   return (
@@ -42,7 +44,7 @@ function App() {
               >
                 <h3
                   onClick={() => handleComposerClick(composer.id)}
-                  className="text-xl font-thin"
+                  className="text-xl font-thin cursor-pointer hover:text-blue-500"
                 >
                   {composer.name}
                 </h3>
